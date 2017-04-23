@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends FragmentActivity{
@@ -48,6 +49,13 @@ public class MainActivity extends FragmentActivity{
         m4.setBackgroundColor(Color.WHITE);
     }
 
+    public void setAllWhite(){
+        m1.setBackgroundColor(Color.WHITE);
+        m2.setBackgroundColor(Color.WHITE);
+        m3.setBackgroundColor(Color.WHITE);
+        m4.setBackgroundColor(Color.WHITE);
+    }
+
     // Starts the View Pager
     public void startViewPager(){
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -76,5 +84,27 @@ public class MainActivity extends FragmentActivity{
         });
     }
 
+    public void jumpToDay1(View view){
+        setAllWhite();
+        m1.setBackgroundColor(Color.BLACK);
+        mViewPager.setCurrentItem(0);
+    }
 
+    public void jumpToDay2(View view){
+        setAllWhite();
+        m2.setBackgroundColor(Color.BLACK);
+        mViewPager.setCurrentItem(1);
+    }
+
+    public void jumpToDay3(View view){
+        setAllWhite();
+        m3.setBackgroundColor(Color.BLACK);
+        mViewPager.setCurrentItem(2);
+    }
+
+    public void jumpToDay4(View view){
+        setAllWhite();
+        m4.setBackgroundColor(Color.BLACK);
+        mViewPager.setCurrentItem(3);
+    }
 }

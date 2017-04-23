@@ -1,108 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <RelativeLayout
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="#FFFFFF"
-        android:gravity="top">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
         <RelativeLayout
+            android:id="@+id/bigger_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="70dp"
+            android:background="#FFFFFF"
+            android:gravity="top">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BEIMUN"
-                android:id="@+id/textView14"
-                android:textColor="#0e0019"
-                android:textSize="12dp"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"/>
+                <Button
+                    android:id="@+id/button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/button_2"
+                    android:layout_alignBottom="@+id/button_2"
+                    android:layout_toLeftOf="@+id/button_2"
+                    android:layout_toStartOf="@+id/button_2"
+                    android:onClick="jumpToDay1"
+                    android:text="1" />
 
+                <Button
+                    android:id="@+id/button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/button_3"
+                    android:layout_alignBottom="@+id/button_3"
+                    android:layout_toLeftOf="@+id/button_3"
+                    android:layout_toStartOf="@+id/button_3"
+                    android:onClick="jumpToDay2"
+                    android:text="2" />
+
+
+                <Button
+                    android:id="@+id/button_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/button_4"
+                    android:layout_toStartOf="@+id/button_4"
+                    android:onClick="jumpToDay3"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/button_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/button_3"
+                    android:layout_alignBottom="@+id/button_3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginRight="11dp"
+                    android:onClick="jumpToDay4"
+                    android:text="4" />
+
+            </RelativeLayout>
 
 
         </RelativeLayout>
 
-
-    </RelativeLayout>
-
-    <View style="@style/Seperator" />
-
-    <RelativeLayout
-        android:id="@+id/bigger_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#FFFFFF"
-        android:gravity="top">
-
-        <RelativeLayout
+        <android.support.v4.view.ViewPager
+            android:layout_height="400dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:background="@color/colorPrimary"
+            android:id="@+id/pager"/>
 
 
-            <Button
-                android:id="@+id/button_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button_2"
-                android:layout_alignBottom="@+id/button_2"
-                android:layout_toLeftOf="@+id/button_2"
-                android:layout_toStartOf="@+id/button_2"
-                android:text="1" />
-
-            <Button
-                android:id="@+id/button_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button_3"
-                android:layout_alignBottom="@+id/button_3"
-                android:layout_toLeftOf="@+id/button_3"
-                android:layout_toStartOf="@+id/button_3"
-                android:text="2" />
+    </LinearLayout>
 
 
-            <Button
-                android:id="@+id/button_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/button_4"
-                android:layout_toStartOf="@+id/button_4"
-                android:text="3" />
 
-            <Button
-                android:id="@+id/button_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button_3"
-                android:layout_alignBottom="@+id/button_3"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="11dp"
-                android:layout_marginRight="11dp"
-                android:text="4" />
-
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-
-    <android.support.v4.view.ViewPager
-        android:layout_height="400dp"
+    <include
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        android:id="@+id/pager"
+        android:layout_height="match_parent" />
 
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
         />
 
 
-
-</LinearLayout>
+</android.support.v4.widget.DrawerLayout>
