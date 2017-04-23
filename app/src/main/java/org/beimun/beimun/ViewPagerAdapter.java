@@ -15,16 +15,16 @@ class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int i) {
         Fragment fragment = null;
         if (i == 0) {
-            //fragment = new MyCards();
+            fragment = new Day1();
         }
         if (i == 1) {
-            //fragment = new MainFragment();
+            fragment = new Day2();
         }
         if (i == 2) {
-            //fragment = new MyProfile();
+            fragment = new Day3();
         }
         if (i == 3) {
-            //fragment = new MyProfile();
+            fragment = new Day4();
         }
         return fragment;
     }

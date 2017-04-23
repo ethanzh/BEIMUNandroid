@@ -29,8 +29,10 @@ public class MainActivity extends FragmentActivity{
 
             startViewPager();
 
+            viewPagerListener();
     }
 
+    // Simply initializes the 4 buttons
     public void initializeButtons() {
         m1 = (Button) findViewById(R.id.button_1);
         m2 = (Button) findViewById(R.id.button_2);
@@ -38,7 +40,7 @@ public class MainActivity extends FragmentActivity{
         m4 = (Button) findViewById(R.id.button_4);
     }
 
-
+    // Colors for testing purposes
     public void setInitialColors() {
         m1.setBackgroundColor(Color.BLACK);
         m2.setBackgroundColor(Color.WHITE);
@@ -46,12 +48,33 @@ public class MainActivity extends FragmentActivity{
         m4.setBackgroundColor(Color.WHITE);
     }
 
-
+    // Starts the View Pager
     public void startViewPager(){
         mViewPager = (ViewPager) findViewById(R.id.pager);
         FragmentManager fragmentManager = getSupportFragmentManager();
         mViewPager.setAdapter(new ViewPagerAdapter(fragmentManager));
-        //mViewPager.setCurrentItem(1);
+        mViewPager.setCurrentItem(0);
     }
+
+    // Listens for changes to the Page Viewer
+    public void viewPagerListener(){
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+        });
+    }
+
 
 }
