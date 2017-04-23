@@ -1,50 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="org.beimun.beimun.LoginActivity">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent"
-        android:paddingTop="300dp">
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:gravity="top">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="22dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            android:layout_gravity="center_horizontal"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="327dp" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="107dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="379dp" />
-
-        <Button
-            android:id="@+id/log_in_button"
-            android:layout_width="265dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Button" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BEIMUN"
+                android:id="@+id/textView14"
+                android:textColor="#0e0019"
+                android:textSize="12dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <View style="@style/Seperator" />
+
+    <RelativeLayout
+        android:id="@+id/bigger_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#FFFFFF"
+        android:gravity="top">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button_2"
+                android:layout_alignBottom="@+id/button_2"
+                android:layout_toLeftOf="@+id/button_2"
+                android:layout_toStartOf="@+id/button_2"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button_3"
+                android:layout_alignBottom="@+id/button_3"
+                android:layout_toLeftOf="@+id/button_3"
+                android:layout_toStartOf="@+id/button_3"
+                android:text="2" />
+
+
+            <Button
+                android:id="@+id/button_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/button_4"
+                android:layout_toStartOf="@+id/button_4"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/button_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button_3"
+                android:layout_alignBottom="@+id/button_3"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="11dp"
+                android:layout_marginRight="11dp"
+                android:text="4" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:id="@+id/pager"
+
+        />
+
 
 
 </LinearLayout>
